@@ -10,7 +10,8 @@ public class Game {
         System.out.println("Welcome to the game of Sticks... in JAVA!");
         System.out.println("So, would you like to play?");
 
-        if (scan.next().equalsIgnoreCase("yes") || scan.next().equalsIgnoreCase("y")) {
+        String response = scan.next();
+        if (response.equalsIgnoreCase("yes") || response.equalsIgnoreCase("y")) {
             System.out.println("Awesome, have fun!");
             play();
         } else {
