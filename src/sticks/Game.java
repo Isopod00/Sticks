@@ -10,7 +10,8 @@ public class Game {
         System.out.println("Welcome to the game of Sticks... in JAVA!");
         System.out.println("So, would you like to play?");
 
-        if (scan.next().equalsIgnoreCase("yes") || scan.next().equalsIgnoreCase("y")) {
+        String response = scan.next();
+        if (response.equalsIgnoreCase("yes") || response.equalsIgnoreCase("y")) {
             System.out.println("Awesome, have fun!");
             play();
         } else {
@@ -19,8 +20,12 @@ public class Game {
     }
 
     private static void play() {
-        Player player1 = new Player();
-        Player player2 = new Player();
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Player 1, what is your name?");
+        Player player1 = new Player(scan.next());
+        System.out.println("Player 2, what is your name?");
+        Player player2 = new Player(scan.next());
         boolean playing = true;
         int turn = 1;
 
@@ -28,9 +33,9 @@ public class Game {
 
         while (playing) {
             if (turn % 2 == 0) {
-                System.out.println("It's Player 1's turn!");
+                System.out.println("It's " + player1.getName() + "'s turn!");
             } else {
-                System.out.println("It's Player 2's turn!");
+                System.out.println("It's " + player2.getName() + "'s turn!");
             }
             turn++;
         }
