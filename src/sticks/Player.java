@@ -10,6 +10,10 @@ public class Player {
         name = playerName;
     }
     
+    public String getName() {
+        return name;
+    }
+    
     public void split() {
         
     }
