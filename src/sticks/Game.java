@@ -19,8 +19,12 @@ public class Game {
     }
 
     private static void play() {
-        Player player1 = new Player();
-        Player player2 = new Player();
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Player 1, what is your name?");
+        Player player1 = new Player(scan.next());
+        System.out.println("Player 2, what is your name?");
+        Player player2 = new Player(scan.next());
         boolean playing = true;
         int turn = 1;
 
@@ -28,9 +32,9 @@ public class Game {
 
         while (playing) {
             if (turn % 2 == 0) {
-                System.out.println("It's Player 1's turn!");
+                System.out.println("It's " + player1.getName() + "'s turn!");
             } else {
-                System.out.println("It's Player 2's turn!");
+                System.out.println("It's " + player2.getName() + "'s turn!");
             }
             turn++;
         }
