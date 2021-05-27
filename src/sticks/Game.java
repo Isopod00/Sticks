@@ -12,7 +12,7 @@ public class Game {
 
         String response = scan.next();
         if (response.equalsIgnoreCase("yes") || response.equalsIgnoreCase("y")) {
-            System.out.println("Awesome, have fun!");
+            System.out.println("Awesome, have fun! \n");
             play();
         } else {
             System.out.println("Oh okay, goodbye then!");
@@ -34,9 +34,32 @@ public class Game {
         while (playing) {
             if (turn % 2 == 0) {
                 System.out.println("It's " + player1.getName() + "'s turn!");
+                player1.toString();
+                player2.toString();
+                System.out.print("Your next move: ");
+                String move = scan.next();
+                if (move.equalsIgnoreCase("RL")) {
+
+                } else if (move.equalsIgnoreCase("LR")) {
+
+                } else if (move.equalsIgnoreCase("Split")) {
+                    player1.split();
+                }
             } else {
                 System.out.println("It's " + player2.getName() + "'s turn!");
+                player1.toString();
+                player2.toString();
+                System.out.print("Your next move: ");
+                String move = scan.next();
+                if (move.equalsIgnoreCase("RL")) {
+
+                } else if (move.equalsIgnoreCase("LR")) {
+
+                } else if (move.equalsIgnoreCase("Split")) {
+                    player2.split();
+                }
             }
+            System.out.println();
             turn++;
         }
 
