@@ -10,7 +10,7 @@ public class Game {
         System.out.println("Welcome to the game of Sticks... in JAVA!");
         System.out.println("So, would you like to play?");
 
-        String response = scan.next();
+        String response = scan.nextLine();
         if (response.equalsIgnoreCase("yes") || response.equalsIgnoreCase("y")) {
             System.out.println("Awesome, have fun! \n");
             play();
@@ -23,9 +23,9 @@ public class Game {
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Player 1, what is your name?");
-        Player player1 = new Player(scan.next());
+        Player player1 = new Player(scan.nextLine());
         System.out.println("Player 2, what is your name?");
-        Player player2 = new Player(scan.next());
+        Player player2 = new Player(scan.nextLine());
         boolean playing = true;
         int turn = 1;
 
@@ -37,11 +37,11 @@ public class Game {
                 System.out.println(player1);
                 System.out.println(player2);
                 System.out.print("Your next move: ");
-                String move = scan.next();
+                String move = scan.nextLine();
                 if (move.equalsIgnoreCase("RL")) {
-
+                    player2.getLH().add(player1.getRH().getFingers());
                 } else if (move.equalsIgnoreCase("LR")) {
-
+                    player2.getRH().add(player1.getLH().getFingers());
                 } else if (move.equalsIgnoreCase("Split")) {
                     player1.split();
                 }
@@ -50,11 +50,11 @@ public class Game {
                 System.out.println(player1);
                 System.out.println(player2);
                 System.out.print("Your next move: ");
-                String move = scan.next();
+                String move = scan.nextLine();
                 if (move.equalsIgnoreCase("RL")) {
-
+                    player1.getLH().add(player2.getRH().getFingers());
                 } else if (move.equalsIgnoreCase("LR")) {
-
+                    player1.getRH().add(player2.getLH().getFingers());
                 } else if (move.equalsIgnoreCase("Split")) {
                     player2.split();
                 }
@@ -71,7 +71,7 @@ public class Game {
 
         System.out.println("Game Over, would you like to play again?");
 
-        if (scan.next().equalsIgnoreCase("yes")) {
+        if (scan.nextLine().equalsIgnoreCase("yes")) {
             System.out.println("Awesome, have fun!");
             play();
         } else {
