@@ -56,6 +56,10 @@ public class Game {
                     player2.getLH().add(player1.getRH().getFingers());
                 } else if (move.equalsIgnoreCase("LR")) {
                     player2.getRH().add(player1.getLH().getFingers());
+                } else if (move.equalsIgnoreCase("RR")) {
+                    player2.getRH().add(player1.getRH().getFingers());
+                } else if (move.equalsIgnoreCase("LL")) {
+                    player2.getLH().add(player1.getLH().getFingers());
                 } else if (move.equalsIgnoreCase("Split")) {
                     player1.split();
                 }
@@ -69,6 +73,10 @@ public class Game {
                     player1.getLH().add(player2.getRH().getFingers());
                 } else if (move.equalsIgnoreCase("LR")) {
                     player1.getRH().add(player2.getLH().getFingers());
+                } else if (move.equalsIgnoreCase("RR")) {
+                    player1.getRH().add(player2.getRH().getFingers());
+                } else if (move.equalsIgnoreCase("LL")) {
+                    player1.getLH().add(player2.getLH().getFingers());
                 } else if (move.equalsIgnoreCase("Split")) {
                     player2.split();
                 }
