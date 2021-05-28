@@ -47,7 +47,7 @@ public class Game {
             }
 
             if (turn % 2 == 0) {
-                System.out.println("\tIt's " + player1.getName() + "'s turn!");
+                System.out.println("\n\tIt's " + player1.getName() + "'s turn!");
                 System.out.println(player1);
                 System.out.println(player2);
                 System.out.print("\tYour next move: ");
@@ -64,7 +64,7 @@ public class Game {
                     player1.split();
                 }
             } else {
-                System.out.println("\tIt's " + player2.getName() + "'s turn!");
+                System.out.println("\n\tIt's " + player2.getName() + "'s turn!");
                 System.out.println(player1);
                 System.out.println(player2);
                 System.out.print("\tYour next move: ");
