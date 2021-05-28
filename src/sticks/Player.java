@@ -11,6 +11,14 @@ public class Player {
         RH = new Hand();
         LH = new Hand();
     }
+    
+    public Hand getRH() {
+        return RH;
+    }
+    
+    public Hand getLH() {
+        return LH;
+    }
 
     public String getName() {
         return name;
