@@ -47,6 +47,6 @@ public class Player {
     }
 
     public String toString() {
-        return name + ":\n\t\t" + "LH: " + LH.getFingers() + " RH: " + RH.getFingers() + "\t";
+        return name + ":\n\t\t" + "LH: " + LH.getFingers() + "   RH: " + RH.getFingers() + "\t";
     }
 }
