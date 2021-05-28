@@ -41,13 +41,11 @@ public class Player {
 
     public boolean dead() {
         if (RH.dead() && LH.dead()) {
-            return false;
-        } else {
             return true;
-        }
+        } return false;
     }
 
     public String toString() {
-        return name + ":\t\t" + "RH: " + RH.getFingers() + "\t" + "LH: " + LH.getFingers();
+        return name + ":\n\t\t" + "RH: " + RH.getFingers() + "\t" + "LH: " + LH.getFingers();
     }
 }
