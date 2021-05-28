@@ -83,9 +83,10 @@ public class Game {
             }
             if ((player1.getRH().dead() && player1.getLH().dead()) || (player2.getRH().dead() && player2.getLH().dead())) {
                 playing = false;
+            } else {
+                System.out.println();
+                turn++;
             }
-            System.out.println();
-            turn++;
         }
         gameOver();
     }
