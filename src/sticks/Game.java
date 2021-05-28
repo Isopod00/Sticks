@@ -23,6 +23,7 @@ public class Game {
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Player 1, what is your name?");
+
         Player player1 = new Player(scan.nextLine());
         System.out.println("Player 2, what is your name?");
         Player player2 = new Player(scan.nextLine());
@@ -33,7 +34,7 @@ public class Game {
 
         while (playing) {
             if (turn % 2 == 0) {
-                System.out.println("It's " + player1.getName() + "'s turn!");
+                System.out.println("It's " + player1.getName() + "'s turn!\n");
                 System.out.println(player1);
                 System.out.println(player2);
                 System.out.print("Your next move: ");
@@ -46,7 +47,7 @@ public class Game {
                     player1.split();
                 }
             } else {
-                System.out.println("It's " + player2.getName() + "'s turn!");
+                System.out.println("It's " + player2.getName() + "'s turn!\n");
                 System.out.println(player1);
                 System.out.println(player2);
                 System.out.print("Your next move: ");
