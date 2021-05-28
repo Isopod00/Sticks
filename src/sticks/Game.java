@@ -33,6 +33,19 @@ public class Game {
         System.out.println();
 
         while (playing) {
+            if (player1.getRH().dead()) {
+                player1.getRH().add(player1.getRH().getFingers() * -1);
+            }
+            if (player2.getRH().dead()) {
+                player2.getRH().add(player2.getRH().getFingers() * -1);
+            }
+            if (player1.getLH().dead()) {
+                player1.getLH().add(player1.getLH().getFingers() * -1);
+            }
+            if (player2.getLH().dead()) {
+                player2.getLH().add(player2.getLH().getFingers() * -1);
+            }
+
             if (turn % 2 == 0) {
                 System.out.println("It's " + player1.getName() + "'s turn!\n");
                 System.out.println(player1);
@@ -60,10 +73,12 @@ public class Game {
                     player2.split();
                 }
             }
+            if ((player1.getRH().dead() && player1.getLH().dead()) || (player2.getRH().dead() && player2.getLH().dead())) {
+                playing = false;
+            }
             System.out.println();
             turn++;
         }
-
         gameOver();
     }
 
