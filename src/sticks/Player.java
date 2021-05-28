@@ -2,21 +2,23 @@ package sticks;
 
 public class Player {
 
-    private Hand RH = new Hand();
-    private Hand LH = new Hand();
+    private Hand RH;
+    private Hand LH;
     private String name;
-    
+
     public Player(String playerName) {
         name = playerName;
+        RH = new Hand();
+        LH = new Hand();
     }
-    
+
     public String getName() {
         return name;
     }
-    
+
     public boolean split() {
-        if(RH.dead() || LH.dead() && RH.getFingers() > 1 || LH.getFingers() > 1) {
-            if(RH.dead()) {
+        if (RH.dead() || LH.dead() && RH.getFingers() > 1 || LH.getFingers() > 1) {
+            if (RH.dead()) {
                 RH.add(LH.getFingers() / 2);
                 LH.add(LH.getFingers() / 2 * -1);
             } else if (LH.dead()) {
@@ -24,15 +26,16 @@ public class Player {
                 RH.add(RH.getFingers() / 2 * -1);
             }
             return true;
-        } else
+        } else {
             return false;
+        }
     }
-    
+
     public boolean dead() {
-        if(RH.dead() && LH.dead())
+        if (RH.dead() && LH.dead()) {
             return false;
-        else
+        } else {
             return true;
+        }
     }
-    
 }
