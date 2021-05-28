@@ -11,11 +11,11 @@ public class Player {
         RH = new Hand();
         LH = new Hand();
     }
-    
+
     public Hand getRH() {
         return RH;
     }
-    
+
     public Hand getLH() {
         return LH;
     }
@@ -42,10 +42,11 @@ public class Player {
     public boolean dead() {
         if (RH.dead() && LH.dead()) {
             return true;
-        } return false;
+        }
+        return false;
     }
 
     public String toString() {
-        return name + ":\n\t\t" + "RH: " + RH.getFingers() + "\t" + "LH: " + LH.getFingers();
+        return name + ":\n\t\t" + "LH: " + LH.getFingers() + " RH: " + RH.getFingers() + "\t";
     }
 }
