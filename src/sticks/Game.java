@@ -34,8 +34,8 @@ public class Game {
         while (playing) {
             if (turn % 2 == 0) {
                 System.out.println("It's " + player1.getName() + "'s turn!");
-                player1.toString();
-                player2.toString();
+                System.out.println(player1);
+                System.out.println(player2);
                 System.out.print("Your next move: ");
                 String move = scan.next();
                 if (move.equalsIgnoreCase("RL")) {
@@ -47,8 +47,8 @@ public class Game {
                 }
             } else {
                 System.out.println("It's " + player2.getName() + "'s turn!");
-                player1.toString();
-                player2.toString();
+                System.out.println(player1);
+                System.out.println(player2);
                 System.out.print("Your next move: ");
                 String move = scan.next();
                 if (move.equalsIgnoreCase("RL")) {
