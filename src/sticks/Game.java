@@ -47,10 +47,10 @@ public class Game {
             }
 
             if (turn % 2 == 0) {
-                System.out.println("It's " + player1.getName() + "'s turn!\n");
+                System.out.println("\tIt's " + player1.getName() + "'s turn!");
                 System.out.println(player1);
                 System.out.println(player2);
-                System.out.print("Your next move: ");
+                System.out.print("\tYour next move: ");
                 String move = scan.nextLine();
                 if (move.equalsIgnoreCase("RL")) {
                     player2.getLH().add(player1.getRH().getFingers());
@@ -64,10 +64,10 @@ public class Game {
                     player1.split();
                 }
             } else {
-                System.out.println("It's " + player2.getName() + "'s turn!\n");
+                System.out.println("\tIt's " + player2.getName() + "'s turn!");
                 System.out.println(player1);
                 System.out.println(player2);
-                System.out.print("Your next move: ");
+                System.out.print("\tYour next move: ");
                 String move = scan.nextLine();
                 if (move.equalsIgnoreCase("RL")) {
                     player1.getLH().add(player2.getRH().getFingers());
