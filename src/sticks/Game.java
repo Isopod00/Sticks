@@ -188,9 +188,15 @@ public class Game {
 
         System.out.println("\nGame Over, would you like to play again?");
 
-        if (scan.nextLine().equalsIgnoreCase("yes")) {
-            System.out.println("Awesome, have fun!");
-            play();
+        String response = scan.nextLine();
+        if (response.equalsIgnoreCase("yes") || response.equalsIgnoreCase("y")) {
+            System.out.println("Awesome, would you like to play 2 player or 1 player? Enter a 1 or a 2");
+            response = scan.nextLine();
+            if (response.equals("2")) {
+                play();
+            } else if (response.equals("1")) {
+                playComputer();
+            }
         } else {
             System.out.println("Oh okay, goodbye then!");
         }
