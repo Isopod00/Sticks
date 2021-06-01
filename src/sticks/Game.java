@@ -23,10 +23,10 @@ public class Game {
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Player 1, what is your name?");
-
         Player player1 = new Player(scan.nextLine());
         System.out.println("Player 2, what is your name?");
         Player player2 = new Player(scan.nextLine());
+
         boolean playing = true;
         int turn = 1;
 
