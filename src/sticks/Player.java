@@ -25,7 +25,7 @@ public class Player {
     }
 
     public boolean split() {
-        if (RH.dead() || LH.dead() && RH.getFingers() > 1 || LH.getFingers() > 1) {
+        if ((RH.dead() || LH.dead()) && (RH.getFingers() > 1 || LH.getFingers() > 1)) {
             if (RH.dead()) {
                 RH.add(LH.getFingers() / 2);
                 LH.add(LH.getFingers() / 2 * -1);
