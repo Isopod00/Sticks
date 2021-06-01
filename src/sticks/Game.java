@@ -81,8 +81,11 @@ public class Game {
                     player2.split();
                 }
             }
-            if ((player1.getRH().dead() && player1.getLH().dead()) || (player2.getRH().dead() && player2.getLH().dead())) {
+            if ((player1.getRH().dead() && player1.getLH().dead())) {
+                System.out.println("\n" + player2.getName() + " has won!");
                 playing = false;
+            } else if ((player2.getRH().dead() && player2.getLH().dead())) {
+                System.out.println("\n" + player1.getName() + " has won!");
             } else {
                 System.out.println();
                 turn++;
@@ -94,7 +97,7 @@ public class Game {
     private static void gameOver() {
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("Game Over, would you like to play again?");
+        System.out.println("\nGame Over, would you like to play again?");
 
         if (scan.nextLine().equalsIgnoreCase("yes")) {
             System.out.println("Awesome, have fun!");
