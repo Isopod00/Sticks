@@ -52,44 +52,50 @@ public class Game {
             }
 
             if (turn % 2 == 0) {
+                boolean actionChosen = false;
                 System.out.println("\n\tIt's " + player1.getName() + "'s turn!");
                 System.out.println(player1);
                 System.out.println(player2);
-                System.out.print("\tYour next move: ");
-                String move = scan.nextLine();
-                if (move.equalsIgnoreCase("RL")) {
-                    player2.getLH().add(player1.getRH().getFingers());
-                } else if (move.equalsIgnoreCase("LR")) {
-                    player2.getRH().add(player1.getLH().getFingers());
-                } else if (move.equalsIgnoreCase("RR")) {
-                    player2.getRH().add(player1.getRH().getFingers());
-                } else if (move.equalsIgnoreCase("LL")) {
-                    player2.getLH().add(player1.getLH().getFingers());
-                } else if (move.equalsIgnoreCase("Split")) {
-                    player1.split();
+                while (!actionChosen) {
+                    System.out.print("\tYour next move: ");
+                    String move = scan.nextLine();
+                    if (move.equalsIgnoreCase("RL") && player2.getLH().add(player1.getRH().getFingers())) {
+                        actionChosen = true;
+                    } else if (move.equalsIgnoreCase("LR") && player2.getRH().add(player1.getLH().getFingers())) {
+                        actionChosen = true;
+                    } else if (move.equalsIgnoreCase("RR") && player2.getRH().add(player1.getRH().getFingers())) {
+                        actionChosen = true;
+                    } else if (move.equalsIgnoreCase("LL") && player2.getLH().add(player1.getLH().getFingers())) {
+                        actionChosen = true;
+                    } else if (move.equalsIgnoreCase("Split") && player1.split()) {
+                        actionChosen = true;
+                    }
                 }
             } else {
+                boolean actionChosen = false;
                 System.out.println("\n\tIt's " + player2.getName() + "'s turn!");
                 System.out.println(player1);
                 System.out.println(player2);
-                System.out.print("\tYour next move: ");
-                String move = scan.nextLine();
-                if (move.equalsIgnoreCase("RL")) {
-                    player1.getLH().add(player2.getRH().getFingers());
-                } else if (move.equalsIgnoreCase("LR")) {
-                    player1.getRH().add(player2.getLH().getFingers());
-                } else if (move.equalsIgnoreCase("RR")) {
-                    player1.getRH().add(player2.getRH().getFingers());
-                } else if (move.equalsIgnoreCase("LL")) {
-                    player1.getLH().add(player2.getLH().getFingers());
-                } else if (move.equalsIgnoreCase("Split")) {
-                    player2.split();
+                while (!actionChosen) {
+                    System.out.print("\tYour next move: ");
+                    String move = scan.nextLine();
+                    if (move.equalsIgnoreCase("RL") && player1.getLH().add(player2.getRH().getFingers())) {
+                        actionChosen = true;
+                    } else if (move.equalsIgnoreCase("LR") && player1.getRH().add(player2.getLH().getFingers())) {
+                        actionChosen = true;
+                    } else if (move.equalsIgnoreCase("RR") && player1.getRH().add(player2.getRH().getFingers())) {
+                        actionChosen = true;
+                    } else if (move.equalsIgnoreCase("LL") && player1.getLH().add(player2.getLH().getFingers())) {
+                        actionChosen = true;
+                    } else if (move.equalsIgnoreCase("Split") && player2.split()) {
+                        actionChosen = true;
+                    }
                 }
             }
-            if ((player1.getRH().dead() && player1.getLH().dead())) {
+            if (player1.dead()) {
                 System.out.println("\n" + player2.getName() + " has won after " + turn + " turns!");
                 playing = false;
-            } else if ((player2.getRH().dead() && player2.getLH().dead())) {
+            } else if (player2.dead()) {
                 System.out.println("\n" + player1.getName() + " has won after " + turn + " turns!");
                 playing = false;
             } else {
@@ -103,7 +109,7 @@ public class Game {
     private static void playComputer() {
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("Player 1, what is your name?");
+        System.out.println("What is your name?");
         Player player1 = new Player(scan.nextLine());
         Player player2 = new Player("Computer");
 
@@ -127,23 +133,6 @@ public class Game {
             }
 
             if (turn % 2 == 0) {
-                System.out.println("\n\tIt's " + player1.getName() + "'s turn!");
-                System.out.println(player1);
-                System.out.println(player2);
-                System.out.print("\tYour next move: ");
-                String move = scan.nextLine();
-                if (move.equalsIgnoreCase("RL")) {
-                    player2.getLH().add(player1.getRH().getFingers());
-                } else if (move.equalsIgnoreCase("LR")) {
-                    player2.getRH().add(player1.getLH().getFingers());
-                } else if (move.equalsIgnoreCase("RR")) {
-                    player2.getRH().add(player1.getRH().getFingers());
-                } else if (move.equalsIgnoreCase("LL")) {
-                    player2.getLH().add(player1.getLH().getFingers());
-                } else if (move.equalsIgnoreCase("Split")) {
-                    player1.split();
-                }
-            } else {
                 System.out.println("\n\tIt's the Computer's turn!");
                 System.out.println(player1);
                 System.out.println(player2);
@@ -168,11 +157,31 @@ public class Game {
                 } else {
                     System.out.println("Split");
                 }
+            } else {
+                boolean actionChosen = false;
+                System.out.println("\n\tIt's " + player1.getName() + "'s turn!");
+                System.out.println(player1);
+                System.out.println(player2);
+                while (!actionChosen) {
+                    System.out.print("\tYour next move: ");
+                    String move = scan.nextLine();
+                    if (move.equalsIgnoreCase("RL") && player2.getLH().add(player1.getRH().getFingers())) {
+                        actionChosen = true;
+                    } else if (move.equalsIgnoreCase("LR") && player2.getRH().add(player1.getLH().getFingers())) {
+                        actionChosen = true;
+                    } else if (move.equalsIgnoreCase("RR") && player2.getRH().add(player1.getRH().getFingers())) {
+                        actionChosen = true;
+                    } else if (move.equalsIgnoreCase("LL") && player2.getLH().add(player1.getLH().getFingers())) {
+                        actionChosen = true;
+                    } else if (move.equalsIgnoreCase("Split") && player1.split()) {
+                        actionChosen = true;
+                    }
+                }
             }
-            if ((player1.getRH().dead() && player1.getLH().dead())) {
+            if (player1.dead()) {
                 System.out.println("\n The Computer has won after " + turn + " turns!");
                 playing = false;
-            } else if ((player2.getRH().dead() && player2.getLH().dead())) {
+            } else if (player2.dead()) {
                 System.out.println("\n" + player2.getName() + " has won after " + turn + " turns!");
                 playing = false;
             } else {

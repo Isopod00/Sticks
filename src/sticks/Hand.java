@@ -5,7 +5,7 @@ public class Hand {
     private int fingers;
 
     /**
-     * Hand Class ******************************************************* class
+     * Hand Class *******************************************************
      * creates a Hand object that has the number of fingers stored.
      */
     public Hand() {
@@ -19,12 +19,16 @@ public class Hand {
 
     // adds more fingers after player makes their move and returns the new value of fingers
     public boolean add(int add) {
-        if(fingers > 0) {
+        if (fingers > 0) {
             fingers += add;
             return true;
         } else {
             return false;
         }
+    }
+
+    public void addSplit(int add) {
+        fingers += add;
     }
 
     // retuns the state of the hand
