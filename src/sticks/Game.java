@@ -8,11 +8,11 @@ public class Game {
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Welcome to the game of Sticks... in JAVA!");
-        System.out.println("So, would you like to play?");
+        System.out.print("So, would you like to play? ");
 
         String response = scan.nextLine();
         if (response.equalsIgnoreCase("yes") || response.equalsIgnoreCase("y")) {
-            System.out.println("Awesome, would you like to play 2 player or 1 player? Enter a 1 or a 2");
+            System.out.print("\nAwesome, would you like to play 2 player or 1 player? Enter a 1 or a 2: ");
             response = scan.nextLine();
             if (response.equals("2")) {
                 play();
@@ -27,9 +27,9 @@ public class Game {
     private static void play() {
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("Player 1, what is your name?");
+        System.out.print("Player 1, what is your name? ");
         Player player1 = new Player(scan.nextLine());
-        System.out.println("Player 2, what is your name?");
+        System.out.print("Player 2, what is your name? ");
         Player player2 = new Player(scan.nextLine());
 
         boolean playing = true;
@@ -109,7 +109,7 @@ public class Game {
     private static void playComputer() {
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("What is your name?");
+        System.out.print("What is your name? ");
         Player player1 = new Player(scan.nextLine());
         Player player2 = new Player("Computer");
 
@@ -195,11 +195,11 @@ public class Game {
     private static void gameOver() {
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("\nGame Over, would you like to play again?");
+        System.out.print("\nGame Over, would you like to play again? ");
 
         String response = scan.nextLine();
         if (response.equalsIgnoreCase("yes") || response.equalsIgnoreCase("y")) {
-            System.out.println("Awesome, would you like to play 2 player or 1 player? Enter a 1 or a 2");
+            System.out.print("\nAwesome, would you like to play 2 player or 1 player? Enter a 1 or a 2: ");
             response = scan.nextLine();
             if (response.equals("2")) {
                 play();
