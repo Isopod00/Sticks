@@ -23,6 +23,14 @@ public class Player {
     public String getName() {
         return name;
     }
+    
+    public boolean add(int add, Hand hand) {
+        if(RH.getFingers() > 0 && LH.getFingers() > 0) {
+            hand.addFingers(add);
+            return true;
+        }
+        return false;
+    }
 
     public boolean split() {
         if ((RH.dead() || LH.dead()) && (RH.getFingers() > 1 || LH.getFingers() > 1)) {
