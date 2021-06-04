@@ -137,25 +137,26 @@ public class Game {
                 System.out.println(player1);
                 System.out.println(player2);
                 System.out.print("\tThe Computer's move: ");
+                boolean actionChosen = false;
 
-                if (!player2.split()) {
+                while (!actionChosen) {
                     int choice = (int) (Math.random() * 4);
-
-                    if (choice == 0) {
-                        player1.getLH().add(player2.getRH().getFingers());
+                    if (choice == 0 && player2.getLH().add(player1.getRH().getFingers())) {
                         System.out.println("RL");
-                    } else if (choice == 1) {
-                        player1.getRH().add(player2.getLH().getFingers());
+                        actionChosen = true;
+                    } else if (choice == 1 && player2.getRH().add(player1.getLH().getFingers())) {
                         System.out.println("LR");
-                    } else if (choice == 2) {
-                        player1.getRH().add(player2.getRH().getFingers());
+                        actionChosen = true;
+                    } else if (choice == 2 && player2.getRH().add(player1.getRH().getFingers())) {
                         System.out.println("RR");
-                    } else if (choice == 3) {
-                        player1.getLH().add(player2.getLH().getFingers());
+                        actionChosen = true;
+                    } else if (choice == 3 && player2.getLH().add(player1.getLH().getFingers())) {
                         System.out.println("LL");
+                        actionChosen = true;
+                    } else if (choice == 4 && player1.split()) {
+                        System.out.println("Split");
+                        actionChosen = true;
                     }
-                } else {
-                    System.out.println("Split");
                 }
             } else {
                 boolean actionChosen = false;
@@ -189,6 +190,7 @@ public class Game {
                 turn++;
             }
         }
+
         gameOver();
     }
 
