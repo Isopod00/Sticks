@@ -141,19 +141,19 @@ public class Game {
 
                 while (!actionChosen) {
                     int choice = (int) (Math.random() * 4);
-                    if (choice == 0 && player2.getLH().add(player1.getRH().getFingers())) {
+                    if (choice == 0 && player1.getLH().add(player2.getRH().getFingers())) {
                         System.out.println("RL");
                         actionChosen = true;
-                    } else if (choice == 1 && player2.getRH().add(player1.getLH().getFingers())) {
+                    } else if (choice == 1 && player1.getRH().add(player2.getLH().getFingers())) {
                         System.out.println("LR");
                         actionChosen = true;
-                    } else if (choice == 2 && player2.getRH().add(player1.getRH().getFingers())) {
+                    } else if (choice == 2 && player1.getRH().add(player2.getRH().getFingers())) {
                         System.out.println("RR");
                         actionChosen = true;
-                    } else if (choice == 3 && player2.getLH().add(player1.getLH().getFingers())) {
+                    } else if (choice == 3 && player1.getLH().add(player2.getLH().getFingers())) {
                         System.out.println("LL");
                         actionChosen = true;
-                    } else if (choice == 4 && player1.split()) {
+                    } else if (choice == 4 && player2.split()) {
                         System.out.println("Split");
                         actionChosen = true;
                     }
