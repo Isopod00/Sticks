@@ -183,7 +183,7 @@ public class Game {
                 System.out.println("\n The Computer has won after " + turn + " turns!");
                 playing = false;
             } else if (player2.dead()) {
-                System.out.println("\n" + player2.getName() + " has won after " + turn + " turns!");
+                System.out.println("\n" + player1.getName() + " has won after " + turn + " turns!");
                 playing = false;
             } else {
                 System.out.println();
