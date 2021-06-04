@@ -17,17 +17,8 @@ public class Hand {
         return fingers;
     }
 
-    // adds more fingers after player makes their move and returns the new value of fingers
-    public boolean add(int add) {
-        if (fingers > 0) {
-            fingers += add;
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public void addSplit(int add) {
+    // adds more fingers to a hand object
+    public void addFingers(int add) {
         fingers += add;
     }
 
