@@ -39,7 +39,7 @@ public class Game {
 
         while (playing) {
             if (player1.getRH().dead()) {
-                player1.getRH().add(player1.getRH().getFingers() * -1);
+                player1.add(player1.getRH().getFingers() * -1, player1.getRH());
             }
             if (player2.getRH().dead()) {
                 player2.getRH().add(player2.getRH().getFingers() * -1);
