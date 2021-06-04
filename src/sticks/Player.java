@@ -23,9 +23,9 @@ public class Player {
     public String getName() {
         return name;
     }
-    
+
     public boolean add(int add, Hand hand) {
-        if(RH.getFingers() > 0 && LH.getFingers() > 0) {
+        if (hand.getFingers() > 0) {
             hand.addFingers(add);
             return true;
         }

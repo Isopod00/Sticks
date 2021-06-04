@@ -141,7 +141,10 @@ public class Game {
 
                 while (!actionChosen) {
                     int choice = (int) (Math.random() * 4);
-                    if (choice == 0 && player1.add(player2.getRH().getFingers(), player1.getLH())) {
+                    if (player2.split()) {
+                        System.out.println("Split");
+                        actionChosen = true;
+                    } else if (choice == 0 && player1.add(player2.getRH().getFingers(), player1.getLH())) {
                         System.out.println("RL");
                         actionChosen = true;
                     } else if (choice == 1 && player1.add(player2.getLH().getFingers(), player1.getRH())) {
@@ -152,9 +155,6 @@ public class Game {
                         actionChosen = true;
                     } else if (choice == 3 && player1.add(player2.getLH().getFingers(), player1.getLH())) {
                         System.out.println("LL");
-                        actionChosen = true;
-                    } else if (choice == 4 && player2.split()) {
-                        System.out.println("Split");
                         actionChosen = true;
                     }
                 }
