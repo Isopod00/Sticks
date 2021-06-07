@@ -30,15 +30,6 @@ public class Player {
         return name;
     }
 
-    // returns true and adds when conditions are met, false otherwise
-    public boolean add(int add, Hand hand) {
-        if (hand.getFingers() > 0) {
-            hand.addFingers(add);
-            return true;
-        }
-        return false;
-    }
-
     // returns true if the hands can properly split, false otherwise
     public boolean split() {
         if ((RH.dead() || LH.dead()) && (RH.getFingers() > 1 || LH.getFingers() > 1)) {

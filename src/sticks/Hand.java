@@ -21,6 +21,15 @@ public class Hand {
         fingers += add;
     }
 
+    // returns true and adds when conditions are met, false otherwise
+    public boolean add(int add) {
+        if (fingers > 0) {
+            addFingers(add);
+            return true;
+        }
+        return false;
+    }
+
     // retuns the state of the hand
     public boolean dead() {
         if (fingers > 0 && fingers < 5) {
