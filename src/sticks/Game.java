@@ -65,7 +65,7 @@ public class Game {
                     String move = scan.nextLine();
                     if (move.equalsIgnoreCase("RL") && !player1.getRH().dead() && player2.getLH().add(player1.getRH().getFingers())) {
                         actionChosen = true;
-                    } else if (move.equalsIgnoreCase("LR") && !player1.getLH().dead() && player2.getLH().add(player1.getLH().getFingers())) {
+                    } else if (move.equalsIgnoreCase("LR") && !player1.getLH().dead() && player2.getRH().add(player1.getLH().getFingers())) {
                         actionChosen = true;
                     } else if (move.equalsIgnoreCase("RR") && !player1.getRH().dead() && player2.getRH().add(player1.getRH().getFingers())) {
                         actionChosen = true;
