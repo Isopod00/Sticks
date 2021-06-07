@@ -4,9 +4,8 @@ public class Hand {
 
     private int fingers;
 
-    /**
-     * Hand Class *******************************************************
-     * creates a Hand object that has the number of fingers stored.
+    /* Hand Class
+       creates a Hand object that has the number of fingers stored.
      */
     public Hand() {
         fingers = 1;

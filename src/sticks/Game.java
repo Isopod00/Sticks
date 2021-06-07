@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class Game {
 
+    /* Game Class
+       creates a Hand object that has the number of fingers stored.
+     */
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
@@ -23,7 +26,8 @@ public class Game {
             System.out.println("Oh okay, goodbye then!");
         }
     }
-
+    
+    // Creates game for 2 player
     private static void play() {
         Scanner scan = new Scanner(System.in);
 
@@ -105,7 +109,8 @@ public class Game {
         }
         gameOver();
     }
-
+    
+    // Creates game for 1 player against computer
     private static void playComputer() {
         Scanner scan = new Scanner(System.in);
 
